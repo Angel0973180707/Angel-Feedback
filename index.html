@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>幸福天使成長回饋計劃｜Angel Feedback</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", Arial, sans-serif;
+      background: #fff7ec;
+      color: #2f2a24;
+    }
+
+    .wrap {
+      max-width: 920px;
+      margin: auto;
+      padding: 24px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #fff3dc, #f8dfb9);
+      padding: 36px 24px;
+      border-radius: 28px;
+      box-shadow: 0 10px 30px rgba(120, 80, 30, .12);
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #f0a04b;
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin: 0 0 12px;
+      color: #5b3a16;
+    }
+
+    h2, h3 {
+      color: #6b4318;
+    }
+
+    p {
+      line-height: 1.8;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 24px;
+      margin: 18px 0;
+      box-shadow: 0 8px 22px rgba(80, 50, 20, .08);
+    }
+
+    label {
+      display: block;
+      font-weight: 700;
+      margin-top: 18px;
+      margin-bottom: 8px;
+      color: #4a351f;
+    }
+
+    input, select {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 13px 14px;
+      border: 1px solid #e2cba8;
+      border-radius: 14px;
+      font-size: 16px;
+      background: #fffdf8;
+    }
+
+    .checks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .check {
+      background: #fffaf2;
+      border: 1px solid #ead6b9;
+      border-radius: 14px;
+      padding: 12px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      font-size: 15px;
+    }
+
+    .check input {
+      width: auto;
+    }
+
+    button {
+      border: 0;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-size: 16px;
+      font-weight: 700;
+      background: #8b6208;
+      color: white;
+      cursor: pointer;
+      margin-top: 18px;
+    }
+
+    .secondary {
+      background: #2f6f5e;
+    }
+
+    .muted {
+      color: #75685c;
+      font-size: 14px;
+    }
+
+    .notice {
+      background: #f5efe3;
+      padding: 16px;
+      border-radius: 18px;
+      line-height: 1.7;
+      margin-top: 16px;
+    }
+
+    .result {
+      display: none;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      word-break: break-word;
+      background: #fff9ef;
+      border: 1px solid #ead6b9;
+      padding: 18px;
+      border-radius: 18px;
+      line-height: 1.8;
+      font-family: "Noto Sans TC", Arial, sans-serif;
+      font-size: 16px;
+    }
+
+    .cta-box {
+      background: #fff3dc;
+      border: 1px solid #efd1a3;
+      padding: 20px;
+      border-radius: 22px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <section class="hero">
+      <div class="tag">Angel Feedback</div>
+      <h1>幸福天使成長回饋計劃</h1>
+      <p>
+        你已經開始努力了，接下來我們一起看看哪裡還能更順。
+      </p>
+      <p class="muted">
+        這份回饋會協助釐清：智慧名片、CTA、內容經營、LINE導流與陪跑方向是否需要修正。
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>一、基本資料</h2>
+
+      <label>姓名 *</label>
+      <input id="name" placeholder="請輸入姓名" />
+
+      <label>電話 *</label>
+      <input id="phone" placeholder="請輸入電話" />
+
+      <label>Email</label>
+      <input id="email" placeholder="請輸入 Email" />
+
+      <label>LINE ID</label>
+      <input id="line_id" placeholder="方便後續聯繫，可不填" />
+
+      <label>品牌／店名</label>
+      <input id="business_name" placeholder="例如：幸福天使智慧名片" />
+
+      <label>產業類型</label>
+      <select id="industry">
+        <option value="">請選擇</option>
+        <option>健康調理</option>
+        <option>美容美甲</option>
+        <option>團購主</option>
+        <option>講師顧問</option>
+        <option>在地店家</option>
+        <option>房仲保險</option>
+        <option>招生教育</option>
+        <option>餐飲烘焙</option>
+        <option>其他</option>
+      </select>
+    </section>
+
+    <section class="card">
+      <h2>二、目前已經執行了哪些？（可多選）</h2>
+
+      <div class="checks" data-group="execution_status">
+        <label class="check"><input type="checkbox" value="已建立智慧名片">已建立智慧名片</label>
+        <label class="check"><input type="checkbox" value="已開始經營短影音">已開始經營短影音</label>
+        <label class="check"><input type="checkbox" value="已增加CTA">已增加 CTA</label>
+        <label class="check"><input type="checkbox" value="已建立LINE導流">已建立 LINE 導流</label>
+        <label class="check"><input type="checkbox" value="已整理客戶案例">已整理客戶案例</label>
+        <label class="check"><input type="checkbox" value="已開始品牌故事內容">已開始品牌故事內容</label>
+        <label class="check"><input type="checkbox" value="已開始招生">已開始招生</label>
+        <label class="check"><input type="checkbox" value="已開始社群經營">已開始社群經營</label>
+        <label class="check"><input type="checkbox" value="已開始AI內容生成">已開始 AI 內容生成</label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>三、目前看到哪些變化？（可多選）</h2>
+
+      <div class="checks" data-group="growth_feedback">
+        <label class="check"><input type="checkbox" value="更多人看到我">更多人看到我</label>
+        <label class="check"><input type="checkbox" value="更多人詢問">更多人詢問</label>
+        <label class="check"><input type="checkbox" value="有人開始主動加LINE">有人開始主動加 LINE</label>
+        <label class="check"><input type="checkbox" value="客戶更理解我">客戶更理解我</label>
+        <label class="check"><input type="checkbox" value="開始有品牌感">開始有品牌感</label>
+        <label class="check"><input type="checkbox" value="曝光增加但成交沒提升">曝光增加但成交沒提升</label>
+        <label class="check"><input type="checkbox" value="有流量但沒轉換">有流量但沒轉換</label>
+        <label class="check"><input type="checkbox" value="很難持續更新">很難持續更新</label>
+        <label class="check"><input type="checkbox" value="不知道下一步做什麼">不知道下一步做什麼</label>
+        <label class="check"><input type="checkbox" value="太多事情很混亂">太多事情很混亂</label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>四、目前最大的卡點（可多選）</h2>
+
+      <div class="checks" data-group="current_block">
+        <label class="check"><input type="checkbox" value="CTA不夠清楚">CTA 不夠清楚</label>
+        <label class="check"><input type="checkbox" value="不知道怎麼成交">不知道怎麼成交</label>
+        <label class="check"><input type="checkbox" value="缺少案例見證">缺少案例見證</label>
+        <label class="check"><input type="checkbox" value="缺少信任感">缺少信任感</label>
+        <label class="check"><input type="checkbox" value="首頁太亂">首頁太亂</label>
+        <label class="check"><input type="checkbox" value="不知道怎麼做內容">不知道怎麼做內容</label>
+        <label class="check"><input type="checkbox" value="LINE沒互動">LINE 沒互動</label>
+        <label class="check"><input type="checkbox" value="短影音不知道拍什麼">短影音不知道拍什麼</label>
+        <label class="check"><input type="checkbox" value="招生沒效果">招生沒效果</label>
+        <label class="check"><input type="checkbox" value="名片沒有轉換率">名片沒有轉換率</label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>五、目前最想優先改善</h2>
+
+      <select id="improve_priority">
+        <option value="">請選擇</option>
+        <option>曝光</option>
+        <option>成交</option>
+        <option>信任</option>
+        <option>品牌感</option>
+        <option>回購</option>
+        <option>招生</option>
+        <option>內容經營</option>
+        <option>AI工具應用</option>
+        <option>長期品牌</option>
+      </select>
+    </section>
+
+    <section class="card">
+      <h2>六、希望得到什麼協助？（可多選）</h2>
+
+      <div class="checks" data-group="support_needs">
+        <label class="check"><input type="checkbox" value="智慧名片調整">智慧名片調整</label>
+        <label class="check"><input type="checkbox" value="CTA優化">CTA 優化</label>
+        <label class="check"><input type="checkbox" value="短影音方向">短影音方向</label>
+        <label class="check"><input type="checkbox" value="AI內容規劃">AI 內容規劃</label>
+        <label class="check"><input type="checkbox" value="招生頁規劃">招生頁規劃</label>
+        <label class="check"><input type="checkbox" value="品牌定位">品牌定位</label>
+        <label class="check"><input type="checkbox" value="LINE導流">LINE 導流</label>
+        <label class="check"><input type="checkbox" value="社群方向">社群方向</label>
+        <label class="check"><input type="checkbox" value="成交流程">成交流程</label>
+        <label class="check"><input type="checkbox" value="客戶信任建立">客戶信任建立</label>
+        <label class="check"><input type="checkbox" value="內容節奏安排">內容節奏安排</label>
+      </div>
+
+      <div class="notice">
+        成長不是一次完成，而是透過執行、回饋、修正，一步一步讓經營更順。
+      </div>
+
+      <button onclick="submitForm()">送出成長回饋，產生修正建議</button>
+      <p id="msg" class="muted"></p>
+    </section>
+
+    <section id="result" class="card result">
+      <h2>你的成長回饋修正報告</h2>
+      <pre id="reportText"></pre>
+
+      <div class="cta-box">
+        <h3>下一步</h3>
+        <p>
+          這份報告是初步修正方向。後續可依照你的實際名片數據、CTA 點擊、LINE 導流與內容成果，
+          進一步規劃 3 個月或 6 個月陪跑方案。
+        </p>
+      </div>
+
+      <button class="secondary" onclick="copyText('reportText')">複製回饋報告</button>
+    </section>
+
+  </div>
+
+  <script>
+    const GAS_URL = "https://script.google.com/macros/s/AKfycbzdSGSE5KNUg8mTFmL8ZXd_CYdwfUPGPj3bgoh4_QnqBSGPENDRx86ppeY7Jdk37knN/exec";
+
+    function val(id) {
+      const el = document.getElementById(id);
+      return el ? el.value.trim() : "";
+    }
+
+    function checkedValues(groupName) {
+      const box = document.querySelector('[data-group="' + groupName + '"]');
+      if (!box) return [];
+      return Array.from(box.querySelectorAll('input[type="checkbox"]:checked')).map(function(input) {
+        return input.value;
+      });
+    }
+
+    async function submitForm() {
+      const msg = document.getElementById("msg");
+
+      if (!val("name") || !val("phone")) {
+        msg.textContent = "請先填寫姓名與電話。";
+        return;
+      }
+
+      msg.textContent = "回饋分析中，請稍候...";
+
+      const payload = {
+        name: val("name"),
+        phone: val("phone"),
+        email: val("email"),
+        line_id: val("line_id"),
+        business_name: val("business_name"),
+        industry: val("industry"),
+
+        execution_status: checkedValues("execution_status"),
+        growth_feedback: checkedValues("growth_feedback"),
+        current_block: checkedValues("current_block"),
+        improve_priority: val("improve_priority"),
+        support_needs: checkedValues("support_needs")
+      };
+
+      try {
+        const res = await fetch(GAS_URL, {
+          method: "POST",
+          body: JSON.stringify({
+            action: "submitGrowthFeedback",
+            payload: payload
+          })
+        });
+
+        const data = await res.json();
+
+        if (!data.ok) {
+          msg.textContent = "送出失敗：" + (data.message || "未知錯誤");
+          return;
+        }
+
+        document.getElementById("reportText").textContent = data.report_text || "";
+        document.getElementById("result").style.display = "block";
+        msg.textContent = "已完成成長回饋，也已送出資料。";
+
+        document.getElementById("result").scrollIntoView({
+          behavior: "smooth"
+        });
+
+      } catch (err) {
+        msg.textContent = "送出失敗，請確認 GAS 已部署為任何人可存取。";
+        console.error(err);
+      }
+    }
+
+    function copyText(id) {
+      const text = document.getElementById(id).textContent;
+      navigator.clipboard.writeText(text).then(function() {
+        alert("已複製");
+      });
+    }
+  </script>
+</body>
+  </html>
